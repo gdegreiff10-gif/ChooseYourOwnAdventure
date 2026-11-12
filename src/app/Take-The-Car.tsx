@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
@@ -18,10 +18,16 @@ export default function Index() {
         can hear something wailing behind you and then the footsteps start. They
         are loud, deliberate and coming towards you. You have half a mile left
         to go when the car starts to slow down. The gas is gone. However, the
-        footsteps seem to have subsided. Do you decide to [[Hide in the car
-        until you are sure the coast is clear]] or [[run home as fast as you
-        can]]
+        footsteps seem to have subsided. Do you decide to hide in the car until
+        you are sure the coast is clear or run home as fast as you can?
       </Text>
+      <Link href="/hide-in-car" style={styles.button}>
+        Hide
+      </Link>
+      <Text style={styles.story}> or </Text>
+      <Link href="/run-home" style={styles.button}>
+        Run
+      </Link>
     </View>
   );
 }
@@ -38,8 +44,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   story: {
-    margin: 128,
+    margin: 16,
     color: "#fff",
     fontSize: 16,
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#405a70",
+    margin: 20,
   },
 });

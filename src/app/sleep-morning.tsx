@@ -29,8 +29,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   story: {
-    margin: 128,
+    margin: 16,
     color: "#fff",
     fontSize: 16,
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#405a70",
+    margin: 20,
   },
 });

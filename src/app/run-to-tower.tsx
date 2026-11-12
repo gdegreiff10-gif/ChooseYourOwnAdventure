@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
@@ -19,9 +19,16 @@ export default function Index() {
         Some guy you've never heard says that extraction is coming in 2 hours. 1
         minute later, on the same channel it says wait another week, extraction
         will come then. You have the supplies to wait for another week, but you
-        aren't sure who's telling the truth. Do you decide to [[Run/Walk to
-        extraction if needed]] or [[wait the week]]?
+        aren't sure who's telling the truth. Do you decide to Run/Walk to
+        extraction if needed or wait the week?
       </Text>
+      <Link href="/run-extraction" style={styles.button}>
+        run to extraction
+      </Link>
+      <Text style={styles.story}> or </Text>
+      <Link href="/wait-the-week" style={styles.button}>
+        wait
+      </Link>
     </View>
   );
 }
@@ -38,8 +45,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   story: {
-    margin: 128,
+    margin: 16,
     color: "#fff",
     fontSize: 16,
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#405a70",
+    margin: 20,
   },
 });

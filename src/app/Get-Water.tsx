@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
@@ -12,8 +12,15 @@ export default function Index() {
         getting dark, 5:00 pm. You only have 2 miles to go, and you have enough
         stamina to run there and back even with the water if you have to.
         However, you can also drive your car off-road. The only issue is that
-        it's loud. Do you decide to [[Take the car]] or [[Run]]
+        it's loud.
       </Text>
+      <Link href="/Take-The-Car" style={styles.button}>
+        Take the car
+      </Link>
+      <Text style={styles.story}> or </Text>
+      <Link href="/Run" style={styles.button}>
+        Run
+      </Link>
     </View>
   );
 }
@@ -30,8 +37,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   story: {
-    margin: 128,
+    margin: 16,
     color: "#fff",
     fontSize: 16,
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#405a70",
+    margin: 20,
   },
 });

@@ -1,10 +1,9 @@
-import { Stack } from "expo-router";
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ title: "Intro" }} />
       <Text style={styles.text}>Fire Watch</Text>
       <Text style={styles.story}>
         You are at a firewatch station. the radio suddenly turns on and someone
@@ -14,9 +13,15 @@ export default function Index() {
         screaming in the back. You immediately check how many supplies you have.
         You only have 2 days of water, you were planning to pick some up at the
         supply drop off spot later. You have all the other supplies needed.
-        Which will you do: [[Option 1: Get water]] or [[Option 2: Ration water
-        and don't leave]]
+        Which will you do:
       </Text>
+      <Link href="/Get-Water" style={styles.button}>
+        Get water
+      </Link>
+      <Text style={styles.story}>Or</Text>
+      <Link href="/Ration" style={styles.button}>
+        Ration Water
+      </Link>
     </View>
   );
 }
@@ -33,8 +38,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
   },
   story: {
-    margin: 128,
+    margin: 16,
     color: "#fff",
     fontSize: 16,
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#405a70",
+    margin: 16,
   },
 });
